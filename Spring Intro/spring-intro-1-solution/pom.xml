@@ -8,8 +8,8 @@
 	<packaging>jar</packaging>
 	<version>3.2.1.RELEASE</version>
 	<parent> 
-		<groupId>com.springsource.training.common</groupId>
 		<artifactId>abstractContainerProject</artifactId>
+		<groupId>com.springsource.training.common</groupId>
 		<version>1.1.7.RELEASE</version>
 	</parent>
 	<repositories>
