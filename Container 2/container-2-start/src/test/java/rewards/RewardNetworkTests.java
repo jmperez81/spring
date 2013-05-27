@@ -42,6 +42,7 @@ public class RewardNetworkTests  {
 	@After
 	public void tearDown() {
 		// TODO : make the appropriate changes so the @PreDestroy annotated methods can be called
+		context.close();
 	}
 
 	@Test

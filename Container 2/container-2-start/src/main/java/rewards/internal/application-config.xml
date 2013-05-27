@@ -21,7 +21,7 @@
 
 	<!-- Loads accounts from the data source -->
 	<bean id="accountRepository" class="rewards.internal.account.JdbcAccountRepository">
-		<property name="dataSource" ref="dataSource"/>
+<!-- 		<property name="dataSource" ref="dataSource"/> -->
 	</bean>
 
 	<!-- Loads restaurants from the data source -->

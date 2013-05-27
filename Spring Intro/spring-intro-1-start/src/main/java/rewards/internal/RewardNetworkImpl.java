@@ -43,7 +43,10 @@ public class RewardNetworkImpl implements RewardNetwork {
 
 	public RewardConfirmation rewardAccountFor(Dining dining) {
 		// TODO 1: Reward an account per the sequence diagram
-		// Implemented by Juan Manuel Pérez following sequence in page 9 of student lab manual
+
+		// *****************************************************************************************************
+		// Implemented by Juan Manuel Pérez Rodríguez
+		// *****************************************************************************************************
 		Account account = accountRepository.findByCreditCard(dining.getCreditCardNumber()); 
 		Restaurant restaurant = restaurantRepository.findByMerchantNumber(dining.getMerchantNumber());
 		MonetaryAmount monetaryAmount = restaurant.calculateBenefitFor(account, dining);
