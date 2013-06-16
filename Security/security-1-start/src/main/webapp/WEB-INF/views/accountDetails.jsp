@@ -32,33 +32,38 @@
 		</table>
 	</td></tr>
 	<%-- TODO 12: only viewers should be allowed to view beneficiaries information --%>
-		<tr><td>
-			<table>
-				<thead>
-					<tr>
-						<td>Beneficiaries:</td>
-					</tr>
-					<tr>
-						<td>Name</td>
-						<td>Allocation Percentage</td>
-						<td>Savings</td>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${account.beneficiaries}" var="beneficiary">
+<%-- 		<security:authorize access="hasRole('ROLE_VIEWER')"> --%>
+			<security:authorize ifAnyGranted="ROLE_VIEWER">
+			<tr><td>
+				<table>
+					<thead>
 						<tr>
-							<td>${beneficiary.name}</td>
-							<td>${beneficiary.allocationPercentage}</td>
-							<td>${beneficiary.savings}</td>
+							<td>Beneficiaries:</td>
 						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</td></tr>
+						<tr>
+							<td>Name</td>
+							<td>Allocation Percentage</td>
+							<td>Savings</td>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${account.beneficiaries}" var="beneficiary">
+							<tr>
+								<td>${beneficiary.name}</td>
+								<td>${beneficiary.allocationPercentage}</td>
+								<td>${beneficiary.savings}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</td></tr>
+		</security:authorize>
 </table>
 	<%-- TODO 11: hide the 'Edit Account' link unless a
         user would be able to access that page --%>
-	<p><a href="editAccount?entityId=${account.entityId}">Edit Account</a></p>
+	<security:authorize access="hasRole('ROLE_EDITOR')">
+		<p><a href="editAccount?entityId=${account.entityId}">Edit Account</a></p>
+	</security:authorize>
 
 <p><a href="<c:url value="/j_spring_security_logout"/>">Logout</a> (<security:authentication property="principal.username"/>)</p>
 

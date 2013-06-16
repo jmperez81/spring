@@ -45,8 +45,10 @@ public class RewardNetworkImpl implements RewardNetwork {
 	}
 
 	// TODO 1: Add transactional annotation to identify this method as needing transactional behavior
-	// TODO 4: Add non-default propagation level (don't do this until instructed)
 	@Transactional(propagation=Propagation.REQUIRED)
+	
+	// TODO 4: Add non-default propagation level (don't do this until instructed)
+//	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public RewardConfirmation rewardAccountFor(Dining dining) {
 		Account account = accountRepository.findByCreditCard(dining.getCreditCardNumber());
 		Restaurant restaurant = restaurantRepository.findByMerchantNumber(dining.getMerchantNumber());

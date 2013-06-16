@@ -20,6 +20,7 @@ import common.money.Percentage;
 // TODO 4: refactor so it uses Spring's JdbcTemplate and a RowMapper called RestaurantRowMapper
 public class JdbcRestaurantRepository implements RestaurantRepository {
 
+	// We provide a JdbcTemplate object through constructor 
 	private JdbcTemplate jdbcTemplate;
 
 	public JdbcRestaurantRepository(DataSource dataSource) {
@@ -115,6 +116,7 @@ public class JdbcRestaurantRepository implements RestaurantRepository {
 		}
 	}
 	
+	// Restaurant RowMapper class, helps JdbcTemplate mapping a ResultSet to a business object of type Restaurant
 	private class RestaurantRowMapper implements RowMapper<Restaurant> {
 
 		@Override

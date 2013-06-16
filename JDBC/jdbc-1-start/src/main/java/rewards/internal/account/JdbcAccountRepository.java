@@ -86,6 +86,7 @@ public class JdbcAccountRepository implements AccountRepository {
 		return new Beneficiary(name, allocationPercentage, savings);
 	}
 	
+	// ResultSetExtractor for Account business object
 	private class AccountExtractor implements ResultSetExtractor<Account> {
 
 		@Override

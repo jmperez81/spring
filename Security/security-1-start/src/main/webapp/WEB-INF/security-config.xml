@@ -11,7 +11,7 @@
 
 	<!-- TODO 04: set the access denied page URL -->
 	<security:http use-expressions="true" access-denied-page="/denied.jsp">
-		<security:form-login login-page="/login.jsp" authentication-failure-url="/TODO-10" />
+		<security:form-login login-page="/login.jsp" authentication-failure-url="/login.jsp?login_error=true" />
 
 		<security:intercept-url pattern="/accounts/edit*"
 			access="hasRole('ROLE_EDITOR')" />
@@ -26,6 +26,9 @@
 	 <security:authentication-manager>
 		<security:authentication-provider>
 			<!-- TODO 08: add MD5 encoding -->
+			<security:password-encoder hash="md5">
+				<security:salt-source system-wide="MySalt"/>
+			</security:password-encoder>
 			<security:user-service properties="/WEB-INF/users.properties" />
 		</security:authentication-provider>
 	</security:authentication-manager>

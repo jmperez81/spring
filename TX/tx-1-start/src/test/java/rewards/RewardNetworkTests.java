@@ -50,7 +50,7 @@ public class RewardNetworkTests {
 
 		// the total contribution amount should have been split into 2 distributions
 		assertEquals(2, contribution.getDistributions().size());
-
+              
 		// each distribution should be 4.00 (as both have a 50% allocation)
 		assertEquals(MonetaryAmount.valueOf("4.00"), contribution.getDistribution("Annabelle").getAmount());
 		assertEquals(MonetaryAmount.valueOf("4.00"), contribution.getDistribution("Corgan").getAmount());
