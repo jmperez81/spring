@@ -10,5 +10,8 @@
 	<!-- TODO 5: add HttpInvoker endpoint for the RewardNetwork -->
 	<!-- name the bean '/httpInvoker/rewardNetwork' -->
 	<!-- provide the 'service' and 'serviceInterface' properties -->
-	
+	<bean name="/httpInvoker/rewardNetwork" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="rewardNetwork"/>
+		<property name="serviceInterface" value="rewards.RewardNetwork"/>
+	</bean>	
 </beans>

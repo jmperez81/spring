@@ -21,7 +21,7 @@ import common.money.MonetaryAmount;
  * Test for the RMI client proxy
  */
 // TODO 3: provide the proper config file location
-@ContextConfiguration(locations = {})
+@ContextConfiguration(locations = {"classpath:rewards/remoting/rmi-client-config.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class RmiTests {
 
@@ -33,7 +33,7 @@ public class RmiTests {
 		Dining dining = Dining.createDining("100.00", "1234123412341234", "1234567890");
 
 		// TODO 4: call the 'rewardAccountFor(..)' method
-		RewardConfirmation confirmation = null;
+		RewardConfirmation confirmation = rewardNetwork.rewardAccountFor(dining);
 
 		assertNotNull(confirmation);
 		assertNotNull(confirmation.getConfirmationNumber());

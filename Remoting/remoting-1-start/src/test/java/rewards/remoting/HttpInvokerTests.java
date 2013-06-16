@@ -21,7 +21,7 @@ import common.money.MonetaryAmount;
  * Tests for an HttpInvoker client of the reward network
  */
 // TODO 7: provide the proper config file location
-@ContextConfiguration(locations = {})
+@ContextConfiguration(locations = {"classpath:rewards/remoting/httpinvoker-client-config.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class HttpInvokerTests {
 
@@ -33,7 +33,7 @@ public class HttpInvokerTests {
 		Dining dining = Dining.createDining("100.00", "1234123412341234", "1234567890");
 
 		// TODO 8: call the 'rewardAccountFor(..)' method
-		RewardConfirmation confirmation = null;
+		RewardConfirmation confirmation = rewardNetwork.rewardAccountFor(dining);
 
 		// assert the expected reward confirmation results
 		assertNotNull(confirmation);

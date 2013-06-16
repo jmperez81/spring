@@ -6,5 +6,10 @@
 
 	<!-- TODO 1: create RmiServiceExporter bean definition -->
 	<!-- optionally set 'alwaysCreateRegistry' to 'true' to avoid the time-consuming registry lookup -->
-
+	<bean id="rmiServiceExporter" class="org.springframework.remoting.rmi.RmiServiceExporter">
+			<property name="service" ref="rewardNetwork"/>
+			<property name="serviceInterface" value="rewards.RewardNetwork"/>
+			<property name="serviceName" value="rewardNetwork"/>
+			<property name="alwaysCreateRegistry" value="true"/>
+	</bean>
 </beans>
