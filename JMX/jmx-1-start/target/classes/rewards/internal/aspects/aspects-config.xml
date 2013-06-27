@@ -26,5 +26,6 @@
 	</aop:aspectj-autoproxy>
 
 	<!-- TODO 2: Activate annotation driven JMX -->
-		
+	<context:mbean-server/>
+	<context:mbean-export/>
 </beans>

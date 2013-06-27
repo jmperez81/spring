@@ -15,11 +15,18 @@
 		 might use a lightweight in-memory DataSource, while in production you connect to a database server
 		 with a connection pool.
 	-->
+
+	<import resource="classpath:rewards/internal/application-config.xml"/>
+	<import resource="classpath:rewards/testdb/config/alternate-datasource-config.xml"/>
 	
 	<!-- Creates an in-memory "rewards" database populated with test data for fast testing -->
-	<jdbc:embedded-database id="dataSource">
+	<jdbc:embedded-database id="dataSource-createdFromPlaceholders">
 		<jdbc:script location="classpath:rewards/testdb/schema.sql"/>
 		<jdbc:script location="classpath:rewards/testdb/test-data.sql"/>
+		
 	</jdbc:embedded-database>
 	
+<!-- 	<alias name="dataSource-createdFromConstants" alias="dataSource"/> -->
+	<alias name="dataSource-createdFromMap" alias="dataSource"/>
+<!-- 	<alias name="dataSource-createdFromProperties" alias="dataSource"/> -->
 </beans>

@@ -3,6 +3,7 @@ package rewards.jms.client;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -44,10 +45,12 @@ public class DiningBatchProcessorTests {
 		batch.add(dining5);
 
 		// TODO 08: invoke the DiningBatchProcessor to send dining list via JMS
+		diningBatchProcessor.processBatch(batch);
 
 		waitForBatch(batch.size(), 1000);
 
 		// TODO 09: assert that the confirmation logger has received the entire batch
+		Assert.assertTrue(confirmationLogger.getConfirmations().size() == 5);
 	}
 
 	private void waitForBatch(int batchSize, int timeout) throws InterruptedException {

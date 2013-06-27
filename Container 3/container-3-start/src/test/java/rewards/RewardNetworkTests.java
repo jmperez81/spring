@@ -22,8 +22,7 @@ public class RewardNetworkTests {
 	public void setUp() {
 		// Create the test configuration for the application from one file
 		ApplicationContext context = new ClassPathXmlApplicationContext(new String[] {
-				"classpath:/rewards/internal/application-config.xml",
-				"classpath:/rewards/test-infrastructure-config.xml" });
+				"classpath:/rewards/system-test-configuration.xml" });
 		// Get the bean to use to invoke the application
 		rewardNetwork = context.getBean(RewardNetwork.class);
 	}

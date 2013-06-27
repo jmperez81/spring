@@ -20,5 +20,7 @@
 	
 	<!-- TODO 07: define a second Spring listener-container with corresponding listener -->
 	<!-- this one should delegate to the 'log' method of the RewardConfirmationLogger -->
-	
+	<jms:listener-container>
+		<jms:listener destination="rewardQueue" ref="confirmationLogger" method="log"/>
+	</jms:listener-container>
 </beans>

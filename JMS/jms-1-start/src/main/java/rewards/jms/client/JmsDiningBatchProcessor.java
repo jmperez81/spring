@@ -14,8 +14,6 @@ public class JmsDiningBatchProcessor implements DiningBatchProcessor {
 	// TODO 03: provide a JmsTemplate field
 	private JmsTemplate jmsTemplate;
 
-	
-	
 	public JmsDiningBatchProcessor(JmsTemplate jmsTemplate) {
 		super();
 		this.jmsTemplate = jmsTemplate;
@@ -25,7 +23,7 @@ public class JmsDiningBatchProcessor implements DiningBatchProcessor {
 
 	public void processBatch(List<Dining> batch) {
 		for (Dining dining : batch) {
-			jmsTemplate.convertAndSend(dining);
+			jmsTemplate.convertAndSend("diningQueue", dining);
 		}
 	}
 }
