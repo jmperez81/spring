@@ -1,0 +1,1 @@
+Bean definition with an inner bean as a property

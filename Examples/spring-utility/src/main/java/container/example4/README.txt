@@ -1,0 +1,1 @@
+Bean definition with a property defined by p namespace

@@ -1,0 +1,1 @@
+Constructor args can be specified with a inner bean inside <constructor-arg> tag. In this case, beanA is not accessible through getBean() method on context

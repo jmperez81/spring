@@ -1,0 +1,1 @@
+By default, classpath: prefix access JARs too. However, when there are several files with the same name in classpath, only the first is loaded. If you want to load every of them, you have to use classpath*: prefix
