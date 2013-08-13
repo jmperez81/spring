@@ -9,8 +9,8 @@ public class Bootstrap {
 	public static void main(String[] args) {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("aop/example1/spring-config.xml");
-		Service service = new ServiceImpl();
-//		 Service service = context.getBean(Service.class);
+//		Service service = new ServiceImpl();
+		 Service service = context.getBean(Service.class);
 		
 		// How many times will be displayed the track message ?  
 		// Ninguna, se está creando el service fuera del contexto de spring!!!! el proxy se crea cuando se pasa por el application context

@@ -8,7 +8,7 @@ public class LoggerTracker {
 	
 	@Before("execution(* do*(..))")
 	public void track(){
-		System.out.println(">>>> something is doing");
+		System.out.println(">>>> Advice executed");
 	}
 	
 }
