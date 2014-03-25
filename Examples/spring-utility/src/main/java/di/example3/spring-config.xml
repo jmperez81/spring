@@ -12,7 +12,7 @@
 	</bean>
 	
 	<bean id="serviceA" class="di.example3.ServiceAImpl" scope="prototype">
-<!-- 		<aop:scoped-proxy/> -->
+		<aop:scoped-proxy/>
 	</bean>
 
 </beans>

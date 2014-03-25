@@ -1,0 +1,1 @@
+Use of FactoryBean interface, only through a transitive dependency getObject method is triggered. You can not trigger getObject by using any getBean() on context.

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<bean id="bean2" class="di.example9.BeanA" c:param1="bean2_value1" c:param2="bean_value2"/>
+	
+	<bean id="bean1" class="di.example9.BeanA" p:prop1="prop_value1" p:prop2-ref="bean2">
+		<constructor-arg name="param1" value="value1"/>
+		<constructor-arg name="param2" value="value2"/>
+	</bean>
+</beans>

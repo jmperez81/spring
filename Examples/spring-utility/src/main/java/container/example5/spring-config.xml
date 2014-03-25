@@ -10,5 +10,8 @@
 	<bean id="serviceA" class="container.example5.ServiceAImpl">
 		<constructor-arg name="param1" value="Valor1"/>
 		<constructor-arg name="param2" value="Valor2"/>
+		<constructor-arg name="param3">
+			<bean id="inner" class="container.example5.ServiceAImpl"/>
+		</constructor-arg>
 	</bean>	
 </beans>

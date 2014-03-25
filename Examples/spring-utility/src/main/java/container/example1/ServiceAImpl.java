@@ -10,6 +10,9 @@ public class ServiceAImpl implements ServiceA {
 	
 	private JdbcTemplate jdbcTemplate;
 	
+	public ServiceAImpl(){
+	}
+	
 	public ServiceAImpl(DataSource datasource){
 		jdbcTemplate = new JdbcTemplate(datasource);
 	}

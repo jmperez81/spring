@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 
-	<bean class="tx.example1.ServiceAImpl">
+	<bean class="container.example1.ServiceAImpl">
 	</bean>	
 	
 	<tx:annotation-driven/>

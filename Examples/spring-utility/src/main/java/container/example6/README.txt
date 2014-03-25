@@ -1,0 +1,1 @@
+Mandatory constructors for Spring beans

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<!-- Constructor args and properties set -->
+	<bean id="class11" class="container.example7.Class1Impl">
+		<constructor-arg name="param1" value="Valor1"/>
+		<constructor-arg name="param2" value="Valor2"/>
+		<property name="param3" value="param3Value"/>
+	</bean>
+	
+		<!-- A constructor argument omitted -->
+<!-- 	<bean id="class12" class="container.example7.Class1Impl"> -->
+<!-- 		<constructor-arg name="param1" value="Valor1"/> -->
+<!-- 	</bean>	 -->
+	
+	<!-- Property omitted -->
+	<bean id="class13" class="container.example7.Class1Impl">
+		<constructor-arg name="param1" value="Valor1"/>
+		<constructor-arg name="param2" value="Valor2"/>			
+	</bean>
+
+	<!-- Property omitted -->
+	<bean id="class14" class="container.example7.Class1Impl">
+		<constructor-arg name="param1" value="Valor1"/>
+		<constructor-arg name="param2" value="Valor2"/>
+		<property name="param4" ref="class13"></property>			
+	</bean>
+</beans>

@@ -1,1 +1,1 @@
-Every bean in the container has a name, even inner beans (an auto-generated name)
+Every bean in the container has a name, even anonymous beans (an auto-generated name)

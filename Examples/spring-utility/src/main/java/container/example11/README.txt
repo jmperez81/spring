@@ -1,0 +1,1 @@
+When the destroy method is called?

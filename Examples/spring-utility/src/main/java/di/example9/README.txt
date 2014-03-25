@@ -1,0 +1,1 @@
+c and p namespaces can be used to simplify properties and constructor arguments for a bean

@@ -1,0 +1,1 @@
+Aspects declared in XML (without annotations)
